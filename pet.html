@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Care Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-size: 18px;
+            color: #333;
+        }
+        input[type="text"], input[type="date"], input[type="time"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .log-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        .log-table th, .log-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .log-table th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Pet Care Tracker</h1>
+</header>
+
+<div class="container">
+    <!-- Feeding Schedule Section -->
+    <div class="feeding-schedule">
+        <h2 class="section-title">Feeding Schedule</h2>
+        <form id="feeding-form">
+            <div class="form-group">
+                <label for="pet-name">Pet Name</label>
+                <input type="text" id="pet-name" placeholder="Enter your pet's name" required>
+            </div>
+            <div class="form-group">
+                <label for="feeding-time">Feeding Time</label>
+                <input type="time" id="feeding-time" required>
+            </div>
+            <div class="form-group">
+                <label for="food-type">Food Type</label>
+                <input type="text" id="food-type" placeholder="Enter food type" required>
+            </div>
+            <button type="submit">Add Feeding Schedule</button>
+        </form>
+
+        <h3>Feeding Log</h3>
+        <table class="log-table" id="feeding-log">
+            <thead>
+                <tr>
+                    <th>Pet Name</th>
+                    <th>Feeding Time</th>
+                    <th>Food Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Feeding log entries will appear here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Exercise Log Section -->
+    <div class="exercise-log" style="margin-top: 40px;">
+        <h2 class="section-title">Exercise Log</h2>
+        <form id="exercise-form">
+            <div class="form-group">
+                <label for="exercise-type">Exercise Type</label>
+                <input type="text" id="exercise-type" placeholder="Enter exercise type" required>
+            </div>
+            <div class="form-group">
+                <label for="exercise-duration">Duration (minutes)</label>
+                <input type="number" id="exercise-duration" placeholder="Enter duration" required>
+            </div>
+            <div class="form-group">
+                <label for="exercise-date">Date</label>
+                <input type="date" id="exercise-date" required>
+            </div>
+            <button type="submit">Add Exercise Log</button>
+        </form>
+
+        <h3>Exercise Log</h3>
+        <table class="log-table" id="exercise-log">
+            <thead>
+                <tr>
+                    <th>Exercise Type</th>
+                    <th>Duration</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Exercise log entries will appear here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Vet Appointment Section -->
+    <div class="vet-appointments" style="margin-top: 40px;">
+        <h2 class="section-title">Vet Appointments</h2>
+        <form id="vet-form">
+            <div class="form-group">
+                <label for="vet-name">Veterinarian Name</label>
+                <input type="text" id="vet-name" placeholder="Enter vet's name" required>
+            </div>
+            <div class="form-group">
+                <label for="appointment-date">Appointment Date</label>
+                <input type="date" id="appointment-date" required>
+            </div>
+            <button type="submit">Add Vet Appointment</button>
+        </form>
+
+        <h3>Vet Appointment Log</h3>
+        <table class="log-table" id="vet-log">
+            <thead>
+                <tr>
+                    <th>Vet Name</th>
+                    <th>Appointment Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Vet appointment entries will appear here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Health Records Section -->
+    <div class="health-records" style="margin-top: 40px;">
+        <h2 class="section-title">Health Records</h2>
+        <form id="health-form">
+            <div class="form-group">
+                <label for="record-type">Record Type</label>
+                <input type="text" id="record-type" placeholder="Enter record type (e.g., vaccination, medication)" required>
+            </div>
+            <div class="form-group">
+                <label for="record-date">Date</label>
+                <input type="date" id="record-date" required>
+            </div>
+            <button type="submit">Add Health Record</button>
+        </form>
+
+        <h3>Health Record Log</h3>
+        <table class="log-table" id="health-log">
+            <thead>
+                <tr>
+                    <th>Record Type</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Health record entries will appear here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    // Feeding Schedule Log
+    document.getElementById("feeding-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const petName = document.getElementById("pet-name").value;
+        const feedingTime = document.getElementById("feeding-time").value;
+        const foodType = document.getElementById("food-type").value;
+        
+        const table = document.getElementById("feeding-log").getElementsByTagName('tbody')[0];
+        const row = table.insertRow();
+        row.insertCell(0).textContent = petName;
+        row.insertCell(1).textContent = feedingTime;
+        row.insertCell(2).textContent = foodType;
+
+        // Reset form
+        document.getElementById("feeding-form").reset();
+    });
+
+    // Exercise Log
+    document.getElementById("exercise-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const exerciseType = document.getElementById("exercise-type").value;
+        const exerciseDuration = document.getElementById("exercise-duration").value;
+        const exerciseDate = document.getElementById("exercise-date").value;
+        
+        const table = document.getElementById("exercise-log").getElementsByTagName('tbody')[0];
+        const row = table.insertRow();
+        row.insertCell(0).textContent = exerciseType;
+        row.insertCell(1).textContent = exerciseDuration + " minutes";
+        row.insertCell(2).textContent = exerciseDate;
+
+        // Reset form
+        document.getElementById("exercise-form").reset();
+    });
+
+    // Vet Appointment Log
+    document.getElementById("vet-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const vetName = document.getElementById("vet-name").value;
+        const appointmentDate = document.getElementById("appointment-date").value;
+        
+        const table = document.getElementById("vet-log").getElementsByTagName('tbody')[0];
+        const row = table.insertRow();
+        row.insertCell(0).textContent = vetName;
+        row.insertCell(1).textContent = appointmentDate;
+
+        // Reset form
+        document.getElementById("vet-form").reset();
+    });
+
+    // Health Record Log
+    document.getElementById("health-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const recordType = document.getElementById("record-type").value;
+        const recordDate = document.getElementById("record-date").value;
+        
+        const table = document.getElementById("health-log").getElementsByTagName('tbody')[0];
+        const row = table.insertRow();
+        row.insertCell(0).textContent = recordType;
+        row.insertCell(1).textContent = recordDate;
+
+        // Reset form
+        document.getElementById("health-form").reset();
+    });
+</script>
+
+</body>
+</html>
